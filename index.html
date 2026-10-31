@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta 10 | Las 10 motos más vendidas de Colombia 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#inicio">Ruta 10</a>
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">Carrito <span id="cartCount">0</span></button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <h1>Las 10 motos que más se matriculan en Colombia</h1>
+      <p>Compara precio y ficha técnica, y arma tu pedido en un solo lugar.</p>
+      <a class="btn" href="#catalogo">Ver catálogo</a>
+    </section>
+
+    <section id="catalogo" class="catalog">
+      <div class="toolbar">
+        <label>Buscar
+          <input type="search" id="search" placeholder="Ej: Boxer, NMAX">
+        </label>
+        <label>Marca
+          <select id="brand"><option value="">Todas</option></select>
+        </label>
+        <label>Ordenar por
+          <select id="sort">
+            <option value="">Más vendidas</option>
+            <option value="asc">Precio: menor a mayor</option>
+            <option value="desc">Precio: mayor a menor</option>
+          </select>
+        </label>
+      </div>
+      <p id="empty" class="empty" hidden>No hay motos con esos filtros. Cambia la búsqueda o la marca.</p>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <p>Ruta 10 · Cra. 45 #10-20, Medellín · ventas@ruta10.example · +57 3148340832</p>
+    <p>Proyecto académico. Los precios son sugeridos y las imágenes fueron generadas con IA.</p>
+  </footer>
+
+  <dialog id="modal" aria-labelledby="mTitle">
+    <button class="icon-btn close" data-close aria-label="Cerrar">✕</button>
+    <img id="mImg" alt="">
+    <div class="modal-body">
+      <h2 id="mTitle"></h2>
+      <p id="mDesc"></p>
+      <dl id="mSpecs" class="specs"></dl>
+      <p class="price" id="mPrice"></p>
+      <button class="btn" id="mAdd">Agregar al carrito</button>
+    </div>
+  </dialog>
+
+  <aside class="drawer" id="drawer" aria-label="Carrito" hidden>
+    <div class="drawer-head">
+      <h2>Tu carrito</h2>
+      <button class="icon-btn" data-drawer-close aria-label="Cerrar carrito">✕</button>
+    </div>
+    <ul id="cartList" class="cart-list"></ul>
+    <p id="cartEmpty" class="empty">Aún no agregas motos.</p>
+    <div class="drawer-foot">
+      <p>Total: <strong id="cartTotal">$0</strong></p>
+      <button class="btn" id="checkout">Finalizar pedido</button>
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
